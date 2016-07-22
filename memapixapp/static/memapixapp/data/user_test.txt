@@ -1,0 +1,3 @@
+apao|password1|Alice|Pao|apao@gmail.com|
+spyapali|password2|Shalini|Pyapali|shalu.pyapali@gmail.com|
+blucky|password3|Bob|Lucky|bob.lucky@gmail.com|
