@@ -17,7 +17,7 @@ class User(models.Model):
     def __str__(self):
         """object representation"""
 
-        return self.username
+        return "{}, {}".format(str(self.id), self.username)
 
 
 @python_2_unicode_compatible
@@ -31,7 +31,7 @@ class Album(models.Model):
     def __str__(self):
         """object representation"""
 
-        return self.title
+        return "{}, {}".format(str(self.id), self.title)
 
 
 @python_2_unicode_compatible
@@ -43,7 +43,7 @@ class Tag(models.Model):
     def __str__(self):
         """object representation"""
 
-        return self.tag_text
+        return "{}, {}".format(str(self.id), self.tag_text)
 
 
 
@@ -61,7 +61,7 @@ class Photo(models.Model):
     def __str__(self):
         """object representation"""
 
-        return str(self.id)
+        return "{}, {}".format(str(self.id), self.caption_text)
 
 
 

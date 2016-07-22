@@ -1,0 +1,17 @@
+puppy
+puppies
+dog
+brown
+white
+yellow
+purple
+blue
+flower
+lake
+snow
+trees
+male
+female
+actor
+actress
+comedian
