@@ -38,11 +38,11 @@ def load_data_txt_to_album_model():
 
     filepath = os.path.abspath('memapixapp/static/memapixapp/data/album_test.txt')
 
-    user = User.objects.get(pk=1)
     with open(filepath) as f:
         for line in f:
-            title = line.strip()
-            new_album = Album(user=user, title=title, date_created=timezone.now())
+            user_id, title = line.strip().split("|")
+            user_id = int(user_id)
+            new_album = Album(user=User.objects.get(pk=user_id), title=title, date_created=timezone.now())
             new_album.save()
 
 
