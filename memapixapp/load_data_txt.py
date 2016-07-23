@@ -1,7 +1,9 @@
 """Loads text data into models."""
 
-from memapixapp.models import Photo, Tag, Album, User
 import os
+
+from memapixapp.models import Photo, Tag, Album, User
+
 from django.utils import timezone
 
 
