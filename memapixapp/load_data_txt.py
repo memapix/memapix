@@ -1,8 +1,10 @@
 """Loads text data into models."""
 
-from memapixapp.models import Photo, Tag, Album, User
 import os
+
 from django.utils import timezone
+
+from memapixapp.models import Photo, Tag, Album, User
 
 
 def load_data_txt_to_photo_model():
