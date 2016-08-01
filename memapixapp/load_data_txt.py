@@ -3,8 +3,9 @@
 import os
 
 from django.utils import timezone
+from django.contrib.auth.models import User
 
-from memapixapp.models import Photo, Tag, Album, User
+from memapixapp.models import Photo, Tag, Album
 
 
 def load_data_txt_to_photo_model():
@@ -29,7 +30,7 @@ def load_data_txt_to_user_model():
     with open(filepath) as f:
         for line in f:
             username, password, first_name, last_name, email, date = line.strip().split("|") # split the line by the delimeter "|" and unpack User attributes.
-            new_user = User(username=username, password=password, first_name=first_name, last_name=last_name, email=email, date_joined=timezone.now())
+            new_user = User(username=username, password=password, first_name=first_name, last_name=last_name, email=email, date_joined=timezone.now(), is_active=True)
             new_user.save()
 
     return "All users from data file created, added to database and saved."
@@ -46,7 +47,6 @@ def load_data_txt_to_album_model():
             user_id = int(user_id)
             new_album = Album(user=User.objects.get(pk=user_id), title=title, date_created=timezone.now())
             new_album.save()
-
 
     return "All albums from data file created, added to database and saved."
 
