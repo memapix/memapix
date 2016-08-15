@@ -30,7 +30,8 @@ def load_data_txt_to_user_model():
     with open(filepath) as f:
         for line in f:
             username, password, first_name, last_name, email, date = line.strip().split("|") # split the line by the delimeter "|" and unpack User attributes.
-            new_user = User(username=username, password=password, first_name=first_name, last_name=last_name, email=email, date_joined=timezone.now(), is_active=True)
+            # Updated user creation to utilize User.create_user() from django.contrib.auth.models
+            new_user = User.objects.create_user(username=username, password=password, first_name=first_name, last_name=last_name, email=email, date_joined=timezone.now(), is_active=True)
             new_user.save()
 
     return "All users from data file created, added to database and saved."

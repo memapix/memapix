@@ -2,7 +2,10 @@
 
 {% block content %}
 
-<h1>Hello</h1>
-<p>You are on the homepage, which means you are authenticated!</p>
+{% if user.is_authenticated %}
+    <h1>Hello {{ user.first_name }}!</h1>
+{% else %}
+    <p>Hello Guest! <a href="{% url 'login' %}">[login]</a></p>
+{% endif %}
 
 {% endblock %}
